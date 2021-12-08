@@ -1,0 +1,57 @@
+@use '../../styles/partials/variables.scss';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem 0 1rem;
+
+    &__image {
+        width: 7.5rem;
+        height: 1.5625rem;
+    }
+
+    &__search-avatar-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__form-input{
+        height: 2.25rem;
+        width: 15rem;
+        border-radius: .25rem;
+        padding: .75rem;
+        background-color: variables.$color-alabaster;
+        border: 1px solid variables.$color-mercury;
+
+        &:focus {
+            outline: none !important;
+            border: 2px solid variables.$color-brainflix-blue;
+        }
+    }
+
+    &__mobile-avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        margin-left: 1rem;
+    }
+
+    &__button {
+        background-color: variables.$color-brainflix-blue;
+        color: variables.$color-white;
+        height: 2.5rem;
+        width: 100%;
+        border-radius: .25rem;
+        border: none;
+        position: relative;
+    }
+
+    &__button-image {
+        vertical-align: middle;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+}
