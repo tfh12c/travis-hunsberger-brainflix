@@ -17,6 +17,10 @@
         padding: 1rem 2rem 0 2rem;
     }
 
+    @include mixins.desktop {
+        padding: 1rem 8rem 0 8rem;
+    }
+
     //brainflix logo
     &__image {
         width: 7.5rem;
@@ -74,7 +78,6 @@
         width: 100%;
         border-radius: .25rem;
         border: none;
-        margin-left: 1rem;
     }
 
     // STYLING FOR TABLET/DESKTOP
