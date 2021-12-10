@@ -1,31 +1,40 @@
 @use '../../styles/partials/variables.scss';
 @use '../../styles/partials/mixins';
 
+
+//MOBILE DIV AND TABLET/DESKTOP DIV WILL NEED TO BE CHANGED TO CHILDS
+//USING DISPLAY NONE TO HIDE ON PAGE
+
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem 1rem 0 1rem;
 
+    //brainflix logo
     &__image {
         width: 7.5rem;
         height: 1.5625rem;
     }
 
-    &__mobile-header {
+    &__mobile-view {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include mixins.tablet {
+            display: none;
+        }
     }
 
-    &__search-avatar-container {
+    &__mobile-search-avatar-container {
         display: flex;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
 
-    &__form-input{
+    &__mobile-form-input{
         height: 2.25rem;
         width: 15rem;
         border-radius: .25rem;
@@ -50,7 +59,7 @@
         margin-left: 1rem;
     }
 
-    &__button {
+    &__mobile-button {
         background-color: variables.$color-brainflix-blue;
         color: variables.$color-white;
         height: 2.5rem;
@@ -59,3 +68,5 @@
         border: none;
     }
 }
+
+// STYLING FOR TABLET/DESKTOP
