@@ -22,7 +22,15 @@ function Header() {
                     <img className="header__mobile-button-image" src={upload}/>UPLOAD
                 </button>
             </div>
-            <div class="header__tablet-desktop"></div>
+            <div class="header__tablet-desktop-view">
+                <form className="header__tablet-desktop-form">
+                    <input className="header__tablet-desktop-form-input" type="search" id="query" name="q" placeholder="Search"></input>
+                </form>
+                <button className="header__tablet-desktop-button">
+                    <img className="header__tablet-desktop-button-image" src={upload}/>UPLOAD
+                </button>
+                <img className="header__tablet-desktop-avatar" src={avatar}/>
+            </div>
         </header>
         </>
     )
