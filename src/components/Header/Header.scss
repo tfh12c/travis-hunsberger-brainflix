@@ -12,6 +12,13 @@
         height: 1.5625rem;
     }
 
+    &__mobile-header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     &__search-avatar-container {
         display: flex;
         margin-top: 1rem;
@@ -20,7 +27,7 @@
 
     &__form-input{
         height: 2.25rem;
-        width: 16.5rem;
+        width: 15rem;
         border-radius: .25rem;
         padding: .75rem;
         background-color: variables.$color-alabaster;

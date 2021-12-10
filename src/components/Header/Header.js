@@ -11,6 +11,7 @@ function Header() {
         <>
         <header className="header">     
             <img className="header__image" src={logo} alt="BrainFlix Logo"/>
+            <div class="header__mobile-header">
             <div className="header__search-avatar-container"> 
                 <form className="header__form">
                     <input className="header__form-input" type="search" id="query" name="q" placeholder="Search"></input>
@@ -20,6 +21,7 @@ function Header() {
             <button className="header__button">
                 <img className="header__button-image" src={upload}/>UPLOAD
             </button>
+            </div>
         </header>
         </>
     )
