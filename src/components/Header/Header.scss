@@ -1,4 +1,5 @@
 @use '../../styles/partials/variables.scss';
+@use '../../styles/partials/mixins';
 
 .header {
     display: flex;
@@ -19,11 +20,15 @@
 
     &__form-input{
         height: 2.25rem;
-        width: 15rem;
+        width: 16.5rem;
         border-radius: .25rem;
         padding: .75rem;
         background-color: variables.$color-alabaster;
         border: 1px solid variables.$color-mercury;
+        background: url(../../assets/images/Icons/search.svg); //why is this negating the background color of the form 
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-left: 30px;
 
         &:focus {
             outline: none !important;
@@ -45,13 +50,5 @@
         width: 100%;
         border-radius: .25rem;
         border: none;
-        position: relative;
-    }
-
-    &__button-image {
-        vertical-align: middle;
-        position: absolute;
-        top: 20%;
-        left: 10%;
     }
 }
