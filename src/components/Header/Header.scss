@@ -14,6 +14,7 @@
     @include mixins.tablet {
         flex-direction: row;
         justify-content: space-between;
+        padding: 1rem 2rem 0 2rem;
     }
 
     //brainflix logo
@@ -73,6 +74,7 @@
         width: 100%;
         border-radius: .25rem;
         border: none;
+        margin-left: 1rem;
     }
 
     // STYLING FOR TABLET/DESKTOP
@@ -86,10 +88,10 @@
     }
 
     &__tablet-desktop-form-input {
-        height: 2.25rem;
+        height: 2.5rem;
         width: 15rem;
         border-radius: .25rem;
-        padding: .75rem;
+        padding: 1rem;
         background-color: variables.$color-alabaster;
         border: 1px solid variables.$color-mercury;
         background: url(../../assets/images/Icons/search.svg); //why is this negating the background color of the form 
@@ -107,14 +109,16 @@
         background-color: variables.$color-brainflix-blue;
         color: variables.$color-white;
         height: 2.5rem;
-        // width: 100%;
+        width: 9.375rem;
         border-radius: .25rem;
         border: none;
+        padding: 0 2rem 0 2rem;
+        margin-left: 1rem;
     }
 
     &__tablet-desktop-avatar {
-        width: 2.25rem;
-        height: 2.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
         border-radius: 50%;
         margin-left: 1rem;
     }
