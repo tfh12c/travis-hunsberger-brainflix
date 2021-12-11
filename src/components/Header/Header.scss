@@ -55,8 +55,8 @@
         border: 1px solid variables.$color-mercury;
         background: url(../../assets/images/Icons/search.svg); //why is this negating the background color of the form 
         background-repeat: no-repeat;
-        background-position: left;
-        padding-left: 30px;
+        background-position: .5rem;
+        padding-left: 1.875rem;
 
         &:focus {
             outline: none !important;
