@@ -1,0 +1,40 @@
+@use '../../styles/partials/variables.scss';
+@use '../../styles/partials/mixins';
+
+.nav {
+    padding: 0 1rem 0 1rem;
+
+    &__article {
+        display: flex;
+        margin-bottom: .5rem;
+    }
+
+    //holds video image
+    &__image-container {
+        height: 4rem;
+    }
+
+    &__video-image {
+        height: 100%;
+        width: 7rem;
+        border-radius: .25rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__text-container {
+        margin-left: .5rem;
+        width: 10rem;
+    }
+
+    //video title
+    &__title {
+        margin: 0;
+        margin-bottom: .5rem;
+    }
+
+    //video channel
+    &__channel {
+        margin: 0;
+    }
+}

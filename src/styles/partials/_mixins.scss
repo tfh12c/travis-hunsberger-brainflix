@@ -1,5 +1,5 @@
 @use './variables';
-//@use './typography' as *;
+
 
 @mixin tablet {
     @media (min-width: variables.$breakpoint-tablet) {
