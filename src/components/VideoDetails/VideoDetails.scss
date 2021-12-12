@@ -1,0 +1,19 @@
+.video-details {
+
+    //div holding video metrics (channel name, date posted, views, likes)
+    &__metrics {
+        display: flex;
+        align-items: center;
+    }
+
+    //div holding channel info (channel name and date posted)
+    &__channel-info {
+
+    }
+
+    //div holding views and likes
+    &__views-likes {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Header from "./components/Header/Header";
 import Video from './components/Video/Video';
+import VideoDetails from './components/VideoDetails/VideoDetails';
 import VideoNav from './components/VideoNav/VideoNav';
 import videosData from './data/videos.json';
 import videoDetailsData from './data/video-details.json';
@@ -38,6 +39,7 @@ video.id !== this.state.videoDetails.id)
     <>
      <Header />
      <Video videoDetails={this.state.videoDetails}/>
+     <VideoDetails videoDetails={this.state.videoDetails}/>
      <VideoNav videosData={filteredVideos} selectVideo={this.handleSelectVideo}/>
     </>
    );

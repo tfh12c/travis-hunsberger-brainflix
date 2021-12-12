@@ -1,9 +1,12 @@
+@use '../../styles/partials/variables.scss';
+@use '../../styles/partials/mixins';
 
 .video__container {
     width: 100%;
     padding-top: 56.25%;
     height: 0rem;
     position: relative;
+    background-color: variables.$color-brainflix-darkblack;
 }
 
 .video {
@@ -12,4 +15,5 @@
     position: absolute;
     top: 0;
     left: 0;
+    
 }

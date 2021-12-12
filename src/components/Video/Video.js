@@ -2,7 +2,7 @@ import './Video.scss';
 
 function Video({ videoDetails }) {
 
-    console.log(videoDetails);
+    //console.log(videoDetails);
 
     return (
         <div className="video__container">
