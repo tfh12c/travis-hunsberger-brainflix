@@ -1,10 +1,11 @@
 import './VideoDetails.scss';
 import views from '../../assets/images/Icons/views.svg';
 import likes from '../../assets/images/Icons/likes.svg';
+import avatar from '../../assets/images/Mohan-muruge.jpg';
 
 function VideoDetails({ videoDetails }) {
 
-    console.log(videoDetails.comments);
+    console.log(videoDetails);
 
     return (
         <section className="video-details">
@@ -25,18 +26,18 @@ function VideoDetails({ videoDetails }) {
             </div>
             <p className="video-details__description">{videoDetails.description}</p>
 
-            {/* start of comments section, make into child */}
+            {/* start of comments form, make into child */}
             {/* find a way to make this into a function to pull length of comments array */}
             <h3 className="video-details__comments-length">3 Comments</h3>
             <div className="video-details__comments-form"> 
 
                 {/* <!-- Avatar Image --> */}
-                <img src="" alt="avatar" className="video-details__comments-avatar"></img>
+                <img src={avatar} className="video-details__comments-avatar"></img>
 
                 <div className="video-details__form-text-container"> 
                     {/* <!-- Comment Input --> */}
-                    <label className="video-details__form-label" for="comment">JOIN THE CONVERSATION</label>
-                    <input type="text" className="video-details__form-comment video-details__form-field" name="comment" id="comment" placeholder="Add a new comment"></input>
+                    <label className="video-details__form-label" htmlFor="comment">JOIN THE CONVERSATION</label>
+                    <input type="text" className="video-details__form-input" name="comment" id="comment" placeholder="Add a new comment"></input>
 
                     {/* <!-- Submit Button --> */}
                     <button type="submit" className="video-details__form-button">COMMENT</button>
@@ -45,7 +46,16 @@ function VideoDetails({ videoDetails }) {
 
             {/* start of comments */}
             {videoDetails.comments.map((comment) => (
-                <h2>{comment.name}</h2>
+                <article className="video-details__comment-card">
+                    <img className="video-details__comment-avatar"></img>
+                    <div className="video-details__comment-text-container">
+                        <div className="video-details__comment-name-date-container">
+                            <h2 className="video-details__comment-name">{comment.name}</h2>
+                            <span className="video-details__comment-date">{comment.timestamp}</span>
+                        </div>
+                    <p className="video-details__comment-text">{comment.comment}</p>
+                    </div>
+                </article>
             )
             )}
 

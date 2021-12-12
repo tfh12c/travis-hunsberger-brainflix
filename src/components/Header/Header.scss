@@ -52,7 +52,7 @@
         width: 15rem;
         border-radius: .25rem;
         padding: .75rem;
-        background-color: variables.$color-alabaster;
+        background-color: variables.$color-alabaster !important;
         border: 1px solid variables.$color-mercury;
         background: url(../../assets/images/Icons/search.svg); //why is this negating the background color of the form 
         background-repeat: no-repeat;

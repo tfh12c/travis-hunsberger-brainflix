@@ -17,7 +17,8 @@ class App extends Component {
   
 
 //function to update main video section to display clicked video from videoNav
-handleSelectVideo = (clickedId) => {
+handleSelectVideo = (clickedId, event) => {
+  event.preventDefault();
 
   // 1. find the video we want from our json file
   const foundVideo = videoDetailsData.find((video) =>

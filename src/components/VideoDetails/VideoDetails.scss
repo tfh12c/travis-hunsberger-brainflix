@@ -1,19 +1,101 @@
+@use '../../styles/partials/variables.scss';
+@use '../../styles/partials/mixins';
+
 .video-details {
+    padding: 0 1rem 0 1rem;
 
     //div holding video metrics (channel name, date posted, views, likes)
     &__metrics {
         display: flex;
         align-items: center;
+        border-top: 1px solid variables.$color-mercury;
+        border-bottom: 1px solid variables.$color-mercury;
+        padding: 1rem 0 1rem 0;
     }
 
     //div holding channel info (channel name and date posted)
     &__channel-info {
+        margin-right: 3rem;
+    }
 
+    &__channel {
+        margin: 0;
+        margin-bottom: 1rem;
     }
 
     //div holding views and likes
     &__views-likes {
         display: flex;
         flex-direction: column;
+    }
+
+    &__views {
+        margin-bottom: 1rem;
+    }
+
+    //div holding comments form
+    &__comments-form {
+        display: flex;
+        border-bottom: 1px solid variables.$color-mercury;
+    }
+
+    //form avatar
+    &__comments-avatar {
+        margin-top: 1.5rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        background-color: variables.$color-mercury;
+    }
+
+    //div holding form label, form input, and comment button
+    &__form-text-container {
+        margin-left: 1rem;
+    }
+
+    &__form-label {
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+        color: variables.$color-silver;
+    }
+
+    &__form-input {
+        margin-top: .25rem;
+        margin-bottom: 1rem;
+        height: 6rem;
+        width: 15rem;
+        border-radius: .25rem;
+        padding: .75rem;
+        background-color: variables.$color-alabaster !important;
+        border: 1px solid variables.$color-mercury;
+
+        &::placeholder {
+            
+        }
+
+        &:focus {
+            outline: none !important;
+            border: 2px solid variables.$color-brainflix-blue;
+        }
+    }
+
+    &__form-button {
+        margin-bottom: 1rem;
+        background-color: variables.$color-brainflix-blue;
+        color: variables.$color-white;
+        height: 2.5rem;
+        width: 15rem;
+        border-radius: .25rem;
+        border: none;
+    }
+
+    //comment avatar placeholder
+    &__comment-avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        margin-left: 1rem;
+        background-color: variables.$color-mercury;
     }
 }
