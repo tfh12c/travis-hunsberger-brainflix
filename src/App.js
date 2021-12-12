@@ -15,12 +15,15 @@ class App extends Component {
   }
 
   
-// 1. find the video we want from our json file
-// 2. set state to the clicked plant 
+
+//function to update main video section to display clicked video from videoNav
 handleSelectVideo = (clickedId) => {
+
+  // 1. find the video we want from our json file
   const foundVideo = videoDetailsData.find((video) =>
   clickedId === video.id)
 
+  // 2. set state to the clicked plant 
   this.setState({
     videoDetails: foundVideo,
   })
