@@ -3,8 +3,6 @@ import logo from "../../assets/images/BrainFlix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import upload from "../../assets/images/Icons/upload.svg";
 
-console.log(logo);
-
 function Header() {
 
     return (
