@@ -2,6 +2,7 @@ import './VideoDetails.scss';
 import views from '../../assets/images/Icons/views.svg';
 import likes from '../../assets/images/Icons/likes.svg';
 import avatar from '../../assets/images/Mohan-muruge.jpg';
+import upload from '../../assets/images/Icons/upload.svg';
 
 function VideoDetails({ videoDetails }) {
 
@@ -40,7 +41,8 @@ function VideoDetails({ videoDetails }) {
                     <input type="text" className="video-details__form-input" name="comment" id="comment" placeholder="Add a new comment"></input>
 
                     {/* <!-- Submit Button --> */}
-                    <button type="submit" className="video-details__form-button">COMMENT</button>
+                    <button type="submit" className="video-details__form-button">
+                        <img className="video-details__form-button-icon" src={upload} alt="upload icon"/>COMMENT</button>
                 </div>
             </div>
 

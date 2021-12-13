@@ -4,10 +4,20 @@
 .video-details {
     padding: 0 1rem 0 1rem;
 
+    &__title {
+        margin: 0;
+        @include mixins.mobile-headline-padding;
+
+        @include mixins.tablet {
+            @include mixins.headline-padding;
+        }
+    }
+
     //div holding video metrics (channel name, date posted, views, likes)
     &__metrics {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         border-top: 1px solid variables.$color-mercury;
         border-bottom: 1px solid variables.$color-mercury;
         padding: 1rem 0 1rem 0;
@@ -23,14 +33,40 @@
         margin-bottom: 1rem;
     }
 
+    &__date {
+        color: variables.$color-silver;
+    }
+
     //div holding views and likes
     &__views-likes {
         display: flex;
         flex-direction: column;
+        color: variables.$color-silver;
     }
 
     &__views {
         margin-bottom: 1rem;
+    }
+
+    &__views-icon{
+        margin-right: .5rem;
+    }
+
+    &__likes-icon {
+        margin-right: .5rem;
+    }
+
+    &__description {
+        margin-bottom: 0;
+    }
+
+    &__comments-length {
+        margin: 0;
+        @include mixins.mobile-headline-padding;
+
+        @include mixins.tablet {
+            @include mixins.headline-padding;
+        }
     }
 
     //div holding comments form
@@ -51,10 +87,12 @@
     //div holding form label, form input, and comment button
     &__form-text-container {
         margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
     }
 
     &__form-label {
-        display: block;
         font-size: .8125rem;
         line-height: 1.125rem;
         font-weight: 700;
@@ -62,7 +100,6 @@
     }
 
     &__form-input {
-        display: block;
         margin-top: .25rem;
         margin-bottom: 1rem;
         height: 6rem;
@@ -71,10 +108,11 @@
         padding: .75rem;
         background-color: variables.$color-alabaster !important;
         border: 1px solid variables.$color-mercury;
+        width: 100%;
 
-        &::placeholder {
+        // &::placeholder {
 
-        }
+        // }
 
         &:focus {
             outline: none !important;
@@ -90,11 +128,24 @@
         width: 15rem;
         border-radius: .25rem;
         border: none;
+        width: 100%;
+        position: relative;
+
+        &:hover {
+            background-color: variables.$color-brainflix-darkblue;
+        }
+    }
+
+    &__form-button-icon {
+        position: absolute;
+        top: .5625rem;
+        left: .3125rem;
     }
 
     //comment card
     &__comment-card {
         display: flex;
+        border-bottom: 1px solid variables.$color-mercury;
     }
 
     //comment avatar placeholder
@@ -104,5 +155,26 @@
         border-radius: 50%;
         background-color: variables.$color-mercury;
         flex-shrink: 0;
+        margin-top: 1rem;
+    }
+
+    //div holding all comment card text name/date/comment
+    &__comment-text-container {
+        margin-left: 1rem;
+    }
+
+    //div holding comment card name and date
+    &__comment-name-date-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__comment-date {
+        color: variables.$color-silver;
+    }
+
+    &__comment-text {
+        margin-top: 0;
     }
 }

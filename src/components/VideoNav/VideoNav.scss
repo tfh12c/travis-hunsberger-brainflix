@@ -2,11 +2,27 @@
 @use '../../styles/partials/mixins';
 
 .nav {
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem 1rem 1rem;
+
+    //anchor tag surrounding video article card
+    &__link {
+        text-decoration: none;
+        color: variables.$color-brainflix-black;
+    }
 
     &__article {
         display: flex;
         margin-bottom: .5rem;
+    }
+
+    &__header {
+        color: variables.$color-silver;
+        margin: 0;
+        @include mixins.mobile-headline-padding;
+
+        @include mixins.tablet {
+            @include mixins.headline-padding;
+        }
     }
 
     //holds video image
