@@ -8,7 +8,7 @@ function VideoNav({ videosData, selectVideo }) {
         <nav className="nav">
             <h2 className="nav__header">NEXT VIDEOS</h2>
             {videosData.map((video) => (
-                <a className="nav__link" href="" onClick={() => {selectVideo(video.id)}}>    
+                <a className="nav__link" onClick={() => {selectVideo(video.id)}}>    
                 <article className="nav__article">
                     <div className="nav__image-container">       
                             <img className="nav__video-image" src={video.image}></img>

@@ -26,11 +26,21 @@
     //div holding channel info (channel name and date posted)
     &__channel-info {
         margin-right: 3rem;
+
+        @include mixins.tablet {
+            display: flex;
+            align-items: center;
+        }
     }
 
     &__channel {
         margin: 0;
         margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            margin: 0;
+            margin-right: 2rem;
+        }
     }
 
     &__date {
@@ -42,10 +52,25 @@
         display: flex;
         flex-direction: column;
         color: variables.$color-silver;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            align-items: center; //this actually does something, i promise
+        }
     }
 
     &__views {
         margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            margin: 0;
+        }
+    }
+
+    &__likes {
+        @include mixins.tablet {
+            margin-left: 2rem;
+        }
     }
 
     &__views-icon{
