@@ -2,7 +2,7 @@ import './VideoDetails.scss';
 import views from '../../assets/images/Icons/views.svg';
 import likes from '../../assets/images/Icons/likes.svg';
 import avatar from '../../assets/images/Mohan-muruge.jpg';
-import upload from '../../assets/images/Icons/upload.svg';
+import comment from '../../assets/images/Icons/add_comment.svg';
 
 function VideoDetails({ videoDetails }) {
 
@@ -28,8 +28,7 @@ function VideoDetails({ videoDetails }) {
             <p className="video-details__description">{videoDetails.description}</p>
 
             {/* start of comments form, make into child */}
-            {/* find a way to make this into a function to pull length of comments array */}
-            <h3 className="video-details__comments-length">3 Comments</h3>
+            <h3 className="video-details__comments-length">{videoDetails.comments.length} Comments</h3>
             <div className="video-details__comments-form"> 
 
                 {/* <!-- Avatar Image --> */}
@@ -42,7 +41,7 @@ function VideoDetails({ videoDetails }) {
 
                     {/* <!-- Submit Button --> */}
                     <button type="submit" className="video-details__form-button">
-                        <img className="video-details__form-button-icon" src={upload} alt="upload icon"/>COMMENT</button>
+                        <img className="video-details__form-button-icon" src={comment} alt="upload icon"/>COMMENT</button>
                 </div>
             </div>
 
