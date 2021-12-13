@@ -6,15 +6,44 @@ import comment from '../../assets/images/Icons/add_comment.svg';
 
 function VideoDetails({ videoDetails }) {
 
-    console.log(videoDetails);
+    //console.log(videoDetails);
+    //console.log(videoDetails.timestamp);
 
+    //reformatting video timestamp to date
+        //grab video details timestamp
+        const videoTimestamp = videoDetails.timestamp
+            //console.log(videoTimestamp);
+
+        //reformat to date
+        const videoDate = new Date(videoTimestamp);
+            //console.log(videoDate);
+
+        //reformat to mm/dd//yyyy format
+        const videoPostedDate = new Intl.DateTimeFormat('en-US').format(videoDate)
+            //console.log(postedDate);
+
+        //omg omg i cant believe i got this to work @ 11:24pm sunday yall IM LEARNING!
+        //will notate what's happening here later
+            const commentArray = videoDetails.comments.map(comment => {
+                const container = {};
+
+                container.name = comment.name;
+                container.date = new Date(comment.timestamp)
+                container.datePosted = new Intl.DateTimeFormat('en-US').format(container.date)
+                container.comment = comment.comment
+
+                return container
+
+            });
+                //console.log(commentArray)
+        
     return (
         <section className="video-details">
             <h1 className="video-details__title">{videoDetails.title}</h1>
             <div className="video-details__metrics">
                 <div className="video-details__channel-info">
                     <h3 className="video-details__channel">By {videoDetails.channel}</h3>
-                    <span className="video-details__date">{videoDetails.timestamp}</span>
+                    <span className="video-details__date">{videoPostedDate}</span>
                 </div>
                 <div className="video-details__views-likes">
                     <span className="video-details__views">
@@ -32,7 +61,7 @@ function VideoDetails({ videoDetails }) {
             <div className="video-details__comments-form"> 
 
                 {/* <!-- Avatar Image --> */}
-                <img src={avatar} className="video-details__comments-avatar"></img>
+                <img src={avatar} alt="profile picture" className="video-details__comments-avatar"></img>
 
                 <div className="video-details__form-text-container"> 
                     {/* <!-- Comment Input --> */}
@@ -46,23 +75,20 @@ function VideoDetails({ videoDetails }) {
             </div>
 
             {/* start of comments */}
-            {videoDetails.comments.map((comment) => (
-                <article className="video-details__comment-card">
-                    <img className="video-details__comment-avatar"></img>
-                    <div className="video-details__comment-text-container">
-                        <div className="video-details__comment-name-date-container">
-                            <h2 className="video-details__comment-name">{comment.name}</h2>
-                            <span className="video-details__comment-date">{comment.timestamp}</span>
-                        </div>
-                    <p className="video-details__comment-text">{comment.comment}</p>
+            {commentArray.map((comment) => (
+            <article className="video-details__comment-card">
+                
+                <img className="video-details__comment-avatar"></img> 
+                <div className="video-details__comment-text-container">
+                    <div className="video-details__comment-name-date-container">
+                        <h2 className="video-details__comment-name">{comment.name}</h2>
+                        <span className="video-details__comment-date">{comment.datePosted}</span>
                     </div>
-                </article>
-            )
-            )}
-
-            {/* {videoDetails.comments.map((comment) => (
-                <h2>{comment.name}</h2>
-            ) */}
+                <p className="video-details__comment-text">{comment.comment}</p>
+                </div>
+            </article>
+        )
+        )}
         </section>
     )
 }
