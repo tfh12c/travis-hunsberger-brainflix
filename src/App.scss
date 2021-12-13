@@ -1,0 +1,7 @@
+@use './styles/partials/mixins';
+
+.details-nav-container {
+    @include mixins.desktop {
+        display: flex;
+    }
+}

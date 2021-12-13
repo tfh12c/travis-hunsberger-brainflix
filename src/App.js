@@ -1,3 +1,4 @@
+import './App.scss';
 import { Component } from "react";
 import Header from "./components/Header/Header";
 import Video from './components/Video/Video';
@@ -42,8 +43,10 @@ video.id !== this.state.videoDetails.id)
     <>
      <Header />
      <Video videoDetails={this.state.videoDetails}/>
-     <VideoDetails videoDetails={this.state.videoDetails}/>
-     <VideoNav videosData={filteredVideos} selectVideo={this.handleSelectVideo}/>
+     <div className="details-nav-container">
+      <VideoDetails videoDetails={this.state.videoDetails}/>
+      <VideoNav videosData={filteredVideos} selectVideo={this.handleSelectVideo}/>
+     </div>
     </>
    );
   }

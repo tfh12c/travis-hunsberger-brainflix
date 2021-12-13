@@ -4,6 +4,10 @@
 .nav {
     padding: 0 1rem 1rem 1rem;
 
+    @include mixins.desktop {
+        border-left: 1px solid variables.$color-mercury;
+    }
+
     //anchor tag surrounding video article card
     &__link {
         text-decoration: none;
@@ -13,6 +17,11 @@
     &__article {
         display: flex;
         margin-bottom: .5rem;
+
+        @include mixins.desktop {
+            margin-bottom: 0;
+            margin-top: 1rem;
+        }
     }
 
     &__header {
@@ -22,6 +31,10 @@
 
         @include mixins.tablet {
             @include mixins.headline-padding;
+        }
+
+        @include mixins.desktop {
+            padding-bottom: 1rem;
         }
     }
 

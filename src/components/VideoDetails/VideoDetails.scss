@@ -4,6 +4,11 @@
 .video-details {
     padding: 0 1rem 0 1rem;
 
+    @include mixins.desktop {
+        padding-right: 0;
+        padding-left: 8rem;
+    }
+
     &__title {
         margin: 0;
         @include mixins.mobile-headline-padding;
@@ -62,6 +67,10 @@
             flex-direction: row;
             align-items: center; //this actually does something, i promise
         }
+
+        @include mixins.desktop {
+            margin-right: 1rem;
+        }
     }
 
     &__views {
@@ -88,6 +97,10 @@
 
     &__description {
         margin-bottom: 0;
+
+        @include mixins.desktop {
+            margin-right: 1rem;
+        }
     }
 
     &__comments-length {
@@ -103,6 +116,10 @@
     &__comments-form {
         display: flex;
         border-bottom: 1px solid variables.$color-mercury;
+
+        @include mixins.desktop {
+            border-bottom: none;
+        }
     }
 
     //form avatar
@@ -206,6 +223,11 @@
         @include mixins.tablet {
             padding: 1rem 0 1rem 0;
         }
+
+        @include mixins.desktop {
+            border-bottom: none;
+            border-top: 1px solid variables.$color-mercury;
+        }
     }
 
     //comment avatar placeholder
@@ -232,6 +254,10 @@
 
     &__comment-date {
         color: variables.$color-silver;
+
+        @include mixins.desktop {
+            margin-right: 1rem;
+        }
     }
 
     &__comment-text {
