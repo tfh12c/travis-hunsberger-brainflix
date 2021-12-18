@@ -11,7 +11,7 @@ class HomePage extends Component {
 
     state = {
         videos: [],
-        selectedVideo: {},
+        selectedVideo: null,
     };
 
     getVideo = () => {
@@ -59,9 +59,14 @@ class HomePage extends Component {
 
     render() {
 
+        if (this.state.selectedVideo === null) {
+            return <p>Loading...</p>
+        }
+
         const filteredVideos = this.state.videos.filter(
             (video) => video.id !== this.state.selectedVideo.id
         );
+            //console.log(this.state.selectedVideo);
 
         return (
             <div className="home-page">

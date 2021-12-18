@@ -6,39 +6,35 @@ import comment from '../../assets/images/Icons/add_comment.svg';
 
 function VideoDetails({ selectedVideo }) {
 
-    console.log(selectedVideo);
-    console.log(selectedVideo.timestamp);
+    //console.log(selectedVideo);
 
-    //reformatting video timestamp to date
-        //grab video details timestamp
+     //reformatting video timestamp in selectedVideo to date
+        //get video details timestamp
         const videoTimestamp = selectedVideo.timestamp
-            console.log(videoTimestamp);
+            //console.log(videoTimestamp);
 
         //reformat to date
         const videoDate = new Date(videoTimestamp);
-            console.log(videoDate);
+            //console.log(videoDate);
 
-        //reformat to mm/dd//yyyy format
-        const videoPostedDate = videoDate.toDateString();
-        console.log(videoPostedDate);
+        //reformat date to mm/dd/yy
+        const videoPostedDate = new Intl.DateTimeFormat('en-US').format(videoDate)
+            //console.log(videoPostedDate);
 
-        //Why isn't this working?
-        // const videoPostedDateError = new Intl.DateTimeFormat('en-US').format(videoDate)
-        //     console.log(videoPostedDate);
+        
+    //takes comments array from selectedVideo and adds mm/dd/yy format 
+        const commentArray = selectedVideo.comments.map(comment => {
+            const container = {};
 
-    //takes comments array and reformats
-        // const commentArray = selectedVideo.comments.map(comment => {
-        //     const container = {};
+            container.name = comment.name;
+            container.date = new Date(comment.timestamp)
+            container.datePosted = new Intl.DateTimeFormat('en-US').format(container.date)
+            container.comment = comment.comment
+            container.id = comment.id
 
-        //     container.name = comment.name;
-        //     container.date = new Date(comment.timestamp)
-        //     container.datePosted = new Intl.DateTimeFormat('en-US').format(container.date)
-        //     container.comment = comment.comment
+            return container
 
-        //     return container
-
-        // });
-        //     console.log(commentArray)
+        });
         
     return (
         <section className="video-details">
@@ -60,8 +56,7 @@ function VideoDetails({ selectedVideo }) {
             <p className="video-details__description">{selectedVideo.description}</p>
 
             {/* start of comments form */}
-            {/* Ask why {selectedVideo.comments.length} won't pull in the length of comments array */}
-            <h3 className="video-details__comments-length">{} Comments</h3>
+            <h3 className="video-details__comments-length">{selectedVideo.comments.length} Comments</h3>
             <div className="video-details__comments-form"> 
 
                 {/* <!-- Avatar Image --> */}
@@ -79,9 +74,8 @@ function VideoDetails({ selectedVideo }) {
             </div>
 
             {/* start of comments */}
-            {/* {commentArray.map((comment) => (
-            <article className="video-details__comment-card">
-                
+            {commentArray.map((comment) => (
+            <article key={comment.id} className="video-details__comment-card">
                 <img className="video-details__comment-avatar"></img> 
                 <div className="video-details__comment-text-container">
                     <div className="video-details__comment-name-date-container">
@@ -91,7 +85,7 @@ function VideoDetails({ selectedVideo }) {
                 <p className="video-details__comment-text">{comment.comment}</p>
                 </div>
             </article>
-        ) */}
+        )
         )}
         </section>
     )
