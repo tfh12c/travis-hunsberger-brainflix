@@ -1,0 +1,119 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
+
+.video-upload {
+    padding: 0 1rem 0 1rem;
+    border-top: 1px solid variables.$color-mercury;
+
+    &__title {
+        margin: 0;
+        @include mixins.mobile-headline-padding;
+
+        @include mixins.tablet {
+            @include mixins.headline-padding;
+        }
+    }
+
+    &__thumbnail-header {
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+        color: variables.$color-silver;
+        margin-top: 0;
+        margin-bottom: .25rem;
+    }
+
+    &__thumbnail-container {
+        background-color: variables.$color-mercury;
+    }
+
+    &__thumbnail-img {
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: .25rem;
+    }
+
+    &__video-title {
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+        color: variables.$color-silver;
+        display: block;
+        margin-top: 1rem;
+    }
+
+    &__title-input {
+        margin-top: .25rem;
+        margin-bottom: 1rem;
+        height: 2.25rem;
+        border-radius: .25rem;
+        padding: .75rem;
+        background-color: variables.$color-alabaster !important;
+        border: 1px solid variables.$color-mercury;
+        width: 100%;
+
+        &:focus {
+            outline: none !important;
+            border: 2px solid variables.$color-brainflix-blue;
+        }
+    }
+
+    &__video-description {
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+        color: variables.$color-silver;
+        display: block;
+    }
+
+    &__description-input {
+        margin-top: .25rem;
+        margin-bottom: 1rem;
+        height: 6rem;
+        border-radius: .25rem;
+        padding: .75rem;
+        background-color: variables.$color-alabaster !important;
+        border: 1px solid variables.$color-mercury;
+        width: 100%;
+
+        &:focus {
+            outline: none !important;
+            border: 2px solid variables.$color-brainflix-blue;
+        }
+    }
+
+    &__publish-button {
+        background-color: variables.$color-brainflix-blue;
+        color: variables.$color-white;
+        height: 2.5rem;
+        width: 100%;
+        border-radius: .25rem;
+        border: none;
+        position: relative;
+        margin-bottom: 1rem;
+
+        &:hover {
+            background-color: variables.$color-brainflix-darkblue;
+        }
+    }
+
+    &__publish-image {
+        position: absolute;
+        top: .5625rem;
+        left: .3125rem;
+    }
+
+    &__cancel-button {
+        background-color: variables.$color-white;
+        color: variables.$color-brainflix-blue;
+        height: 2.5rem;
+        width: 100%;
+        border-radius: .25rem;
+        border: none;
+        position: relative;
+
+        &:hover {
+            background-color: variables.$color-brainflix-darkblue;
+        }
+    }
+}

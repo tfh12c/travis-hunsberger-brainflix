@@ -2,9 +2,6 @@
 @use '../../styles/partials/mixins';
 
 
-//MOBILE DIV AND TABLET/DESKTOP DIV WILL NEED TO BE CHANGED TO CHILDS
-//USING DISPLAY NONE TO HIDE ON PAGE
-
 .header {
     display: flex;
     flex-direction: column;
@@ -70,6 +67,7 @@
         height: 2.25rem;
         border-radius: 50%;
         margin-left: 1rem;
+        object-fit: cover;
     }
 
     &__mobile-button {
@@ -143,6 +141,7 @@
         height: 2.5rem;
         border-radius: 50%;
         margin-left: 1rem;
+        object-fit: cover;
     }
 
 }
