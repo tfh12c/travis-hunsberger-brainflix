@@ -1,6 +1,17 @@
 @use '../../styles/partials/variables.scss';
 @use '../../styles/partials/mixins';
 
+.video__padding-container {
+    @include mixins.tablet {
+        padding: 0 2rem 0 2rem;
+        background-color: variables.$color-video-player-components;
+    }
+
+    @include mixins.desktop {
+        padding: 0 10rem 0 10rem;
+    }
+}
+
 .video__container {
     width: 100%;
     padding-top: 56.25%;
@@ -15,5 +26,5 @@
     position: absolute;
     top: 0;
     left: 0;
-    
+    object-fit: cover;
 }

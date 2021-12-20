@@ -1,3 +1,4 @@
+import './HomePage.scss';
 import { Component } from 'react';
 import axios from 'axios';
 import Video from '../../components/Video/Video';
@@ -71,8 +72,10 @@ class HomePage extends Component {
         return (
             <div className="home-page">
                 <Video selectedVideo={this.state.selectedVideo} />
-                <VideoDetails selectedVideo={this.state.selectedVideo} />
-                <VideoNav videos={filteredVideos} />
+                <div className="home-page__desktop-view">   
+                    <VideoDetails selectedVideo={this.state.selectedVideo} />
+                    <VideoNav videos={filteredVideos} />
+                </div>
             </div>
         );
     }
