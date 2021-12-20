@@ -265,5 +265,9 @@
 
     &__comment-text {
         margin-top: 0;
+
+        @include mixins.tablet {
+            margin-right: 1rem;
+        }
     }
 }
