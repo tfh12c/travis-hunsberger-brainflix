@@ -9,6 +9,10 @@
         padding: 0 3rem 0 3rem;
     }
 
+    @include mixins.desktop {
+        padding: 0 8rem 0 8rem;
+    }
+
     &__title {
         margin: 0;
         @include mixins.mobile-headline-padding;
@@ -24,6 +28,23 @@
             border-bottom: 1px solid variables.$color-mercury;
             margin-bottom: 1rem;
             
+            @include mixins.desktop {
+                display: flex;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    &__thumbnail-header-image-container {
+        @include mixins.desktop {
+            width: 30%;
+        }
+    }
+
+    &__form-items-container {
+        @include mixins.desktop {
+            width: 70%;
+            margin-left: 2rem;
         }
     }
 
@@ -52,6 +73,10 @@
         @include mixins.tablet {
             width: 50%;
         }
+
+        @include mixins.desktop {
+            width: 100%;
+        }
     }
 
     &__video-title {
@@ -61,6 +86,10 @@
         color: variables.$color-silver;
         display: block;
         margin-top: 1rem;
+
+        @include mixins.desktop {
+            margin-top: 2rem;
+        }
     }
 
     &__title-input {
@@ -90,7 +119,7 @@
     &__description-input {
         margin-top: .25rem;
         margin-bottom: 1rem;
-        height: 6rem;
+        height: 5.3125rem;
         border-radius: .25rem;
         padding: .75rem;
         background-color: variables.$color-alabaster !important;

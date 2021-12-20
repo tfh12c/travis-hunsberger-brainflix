@@ -128,6 +128,11 @@
         padding: 0 2rem 0 2rem;
         margin-left: 1rem;
         position: relative;
+
+        &:hover {
+            background-color: variables.$color-brainflix-darkblue;
+        }
+
     }
 
     &__tablet-desktop-button-image {
