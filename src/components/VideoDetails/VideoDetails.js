@@ -6,20 +6,15 @@ import comment from '../../assets/images/Icons/add_comment.svg';
 
 function VideoDetails({ selectedVideo }) {
 
-    //console.log(selectedVideo);
-
      //reformatting video timestamp in selectedVideo to date
         //get video details timestamp
         const videoTimestamp = selectedVideo.timestamp
-            //console.log(videoTimestamp);
 
         //reformat to date
         const videoDate = new Date(videoTimestamp);
-            //console.log(videoDate);
 
         //reformat date to mm/dd/yy
         const videoPostedDate = new Intl.DateTimeFormat('en-US').format(videoDate)
-            //console.log(videoPostedDate);
 
         
     //takes comments array from selectedVideo and adds mm/dd/yy format 

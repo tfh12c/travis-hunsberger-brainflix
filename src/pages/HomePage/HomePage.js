@@ -29,7 +29,6 @@ class HomePage extends Component {
     getSpecificVideoId(id) {
         axios.get(`https://project-2-api.herokuapp.com/videos/${id}/?api_key=cb5ad499-beee-4800-b523-87c70327d42a`)
             .then((response) => {
-                //console.log(response);
                 this.setState({
                     selectedVideo: response.data
                 });
@@ -40,7 +39,6 @@ class HomePage extends Component {
     componentDidMount() {
         axios.get("https://project-2-api.herokuapp.com/videos?api_key=cb5ad499-beee-4800-b523-87c70327d42a")
             .then((response) => {
-                //console.log(response.data);
                 this.setState({
                     videos: response.data,
                 });
@@ -67,7 +65,6 @@ class HomePage extends Component {
         const filteredVideos = this.state.videos.filter(
             (video) => video.id !== this.state.selectedVideo.id
         );
-            //console.log(this.state.selectedVideo);
 
         return (
             <div className="home-page">

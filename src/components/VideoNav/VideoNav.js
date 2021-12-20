@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 function VideoNav({ videos }) {
 
-    //console.log(videos);
-
     return(
         <nav className="video-nav">
             <h2 className="video-nav__header">NEXT VIDEOS</h2>

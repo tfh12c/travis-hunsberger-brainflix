@@ -1,10 +1,18 @@
 import './UploadPage.scss';
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import publish from '../../assets/images/Icons/publish.svg';
+import { Redirect } from 'react-router-dom';
 
 function UploadPage() {
 
-    
+    //tried a few different things here, just could not get the redirect to work, will follow up w/ open studio
+    const onPublish = (event) => {
+        event.preventDefault()
+        alert("Thanks for uploading!")
+        return (
+            <Redirect to="/" />
+        );
+    }
 
     return(
        <section className="video-upload">
@@ -26,9 +34,11 @@ function UploadPage() {
                 </div>
             </div>
             <div className="video-upload__button-container">
-                <button className="video-upload__publish-button" type="submit">
-                    <img className="video-upload__publish-image" src={publish} alt="upload icon"/>PUBLISH
-                </button>
+                <form onSubmit={onPublish}>
+                    <button className="video-upload__publish-button" type="submit">
+                        <img className="video-upload__publish-image" src={publish} alt="upload icon"/>PUBLISH
+                    </button>
+                </form>
                 <button className="video-upload__cancel-button">CANCEL</button>
             </div>
        </section>
