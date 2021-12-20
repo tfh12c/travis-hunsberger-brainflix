@@ -129,6 +129,7 @@
         height: 2.25rem;
         border-radius: 50%;
         background-color: variables.$color-divider-outline;
+        object-fit: cover;
 
         @include mixins.tablet {
             margin-top: 1rem;
@@ -244,6 +245,7 @@
     //div holding all comment card text name/date/comment
     &__comment-text-container {
         margin-left: 1rem;
+        width: 100%;
     }
 
     //div holding comment card name and date
