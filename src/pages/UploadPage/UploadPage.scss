@@ -3,7 +3,7 @@
 
 .video-upload {
     padding: 0 1rem 0 1rem;
-    border-top: 1px solid variables.$color-mercury;
+    border-top: 1px solid variables.$color-divider-outline;
 
     @include mixins.tablet {
         padding: 0 3rem 0 3rem;
@@ -24,8 +24,8 @@
 
     &__video-content-container {
         @include mixins.tablet {
-            border-top: 1px solid variables.$color-mercury;
-            border-bottom: 1px solid variables.$color-mercury;
+            border-top: 1px solid variables.$color-divider-outline;
+            border-bottom: 1px solid variables.$color-divider-outline;
             margin-bottom: 1rem;
             
             @include mixins.desktop {
@@ -52,7 +52,7 @@
         font-size: .8125rem;
         line-height: 1.125rem;
         font-weight: 700;
-        color: variables.$color-silver;
+        color: variables.$color-secondary-text;
         margin-top: 0;
         margin-bottom: .25rem;
 
@@ -62,7 +62,7 @@
     }
 
     &__thumbnail-container {
-        background-color: variables.$color-mercury;
+        background-color: variables.$color-divider-outline;
     }
 
     &__thumbnail-img {
@@ -83,7 +83,7 @@
         font-size: .8125rem;
         line-height: 1.125rem;
         font-weight: 700;
-        color: variables.$color-silver;
+        color: variables.$color-secondary-text;
         display: block;
         margin-top: 1rem;
 
@@ -98,13 +98,13 @@
         height: 2.25rem;
         border-radius: .25rem;
         padding: .75rem;
-        background-color: variables.$color-alabaster !important;
-        border: 1px solid variables.$color-mercury;
+        background-color: variables.$color-form-field-background !important;
+        border: 1px solid variables.$color-divider-outline;
         width: 100%;
 
         &:focus {
             outline: none !important;
-            border: 2px solid variables.$color-brainflix-blue;
+            border: 2px solid variables.$color-primary-cta;
         }
     }
 
@@ -112,7 +112,7 @@
         font-size: .8125rem;
         line-height: 1.125rem;
         font-weight: 700;
-        color: variables.$color-silver;
+        color: variables.$color-secondary-text;
         display: block;
     }
 
@@ -122,13 +122,13 @@
         height: 5.3125rem;
         border-radius: .25rem;
         padding: .75rem;
-        background-color: variables.$color-alabaster !important;
-        border: 1px solid variables.$color-mercury;
+        background-color: variables.$color-form-field-background !important;
+        border: 1px solid variables.$color-divider-outline;
         width: 100%;
 
         &:focus {
             outline: none !important;
-            border: 2px solid variables.$color-brainflix-blue;
+            border: 2px solid variables.$color-primary-cta;
         }
     }
 
@@ -140,8 +140,8 @@
     }
 
     &__publish-button {
-        background-color: variables.$color-brainflix-blue;
-        color: variables.$color-white;
+        background-color: variables.$color-primary-cta;
+        color: variables.$color-background-cta;
         height: 2.5rem;
         width: 100%;
         border-radius: .25rem;
@@ -150,7 +150,7 @@
         margin-bottom: 1rem;
 
         &:hover {
-            background-color: variables.$color-brainflix-darkblue;
+            background-color: variables.$color-cta-hover;
         }
 
         @include mixins.tablet {
@@ -167,8 +167,8 @@
     }
 
     &__cancel-button {
-        background-color: variables.$color-white;
-        color: variables.$color-brainflix-blue;
+        background-color: variables.$color-background-cta;
+        color: variables.$color-primary-cta;
         height: 2.5rem;
         width: 100%;
         border-radius: .25rem;
@@ -176,7 +176,7 @@
         position: relative;
 
         &:hover {
-            background-color: variables.$color-brainflix-darkblue;
+            background-color: variables.$color-cta-hover;
         }
 
         @include mixins.tablet {

@@ -49,8 +49,8 @@
         width: 15rem;
         border-radius: .25rem;
         padding: .75rem;
-        background-color: variables.$color-alabaster !important;
-        border: 1px solid variables.$color-mercury;
+        background-color: variables.$color-form-field-background !important;
+        border: 1px solid variables.$color-divider-outline;
         background: url(../../assets/images/Icons/search.svg); //why is this negating the background color of the form 
         background-repeat: no-repeat;
         background-position: .5rem;
@@ -58,7 +58,7 @@
 
         &:focus {
             outline: none !important;
-            border: 2px solid variables.$color-brainflix-blue;
+            border: 2px solid variables.$color-primary-cta;
         }
     }
 
@@ -70,17 +70,23 @@
         object-fit: cover;
     }
 
+    &__mobile-link {
+        text-decoration: none;
+        width: 100%;
+    }
+
     &__mobile-button {
-        background-color: variables.$color-brainflix-blue;
-        color: variables.$color-white;
+        background-color: variables.$color-primary-cta;
+        color: variables.$color-background-cta;
         height: 2.5rem;
         width: 100%;
         border-radius: .25rem;
         border: none;
         position: relative;
+        cursor: pointer;
 
         &:hover {
-            background-color: variables.$color-brainflix-darkblue;
+            background-color: variables.$color-cta-hover;
         }
     }
 
@@ -105,8 +111,8 @@
         width: 15rem;
         border-radius: .25rem;
         padding: 1rem;
-        background-color: variables.$color-alabaster !important;
-        border: 1px solid variables.$color-mercury;
+        background-color: variables.$color-form-field-background !important;
+        border: 1px solid variables.$color-divider-outline;
         background: url(../../assets/images/Icons/search.svg); //why is this negating the background color of the form 
         background-repeat: no-repeat;
         background-position: .5rem;
@@ -114,13 +120,13 @@
 
         &:focus {
             outline: none !important;
-            border: 2px solid variables.$color-brainflix-blue;
+            border: 2px solid variables.$color-primary-cta;
         }
     }
 
     &__tablet-desktop-button {
-        background-color: variables.$color-brainflix-blue;
-        color: variables.$color-white;
+        background-color: variables.$color-primary-cta;
+        color: variables.$color-background-cta;
         height: 2.5rem;
         width: 9.375rem;
         border-radius: .25rem;
@@ -130,7 +136,7 @@
         position: relative;
 
         &:hover {
-            background-color: variables.$color-brainflix-darkblue;
+            background-color: variables.$color-cta-hover;
         }
 
     }
