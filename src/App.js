@@ -1,55 +1,20 @@
 import './App.scss';
-import { Component } from "react";
-import Header from "./components/Header/Header";
-import Video from './components/Video/Video';
-import VideoDetails from './components/VideoDetails/VideoDetails';
-import VideoNav from './components/VideoNav/VideoNav';
-import videosData from './data/videos.json';
-import videoDetailsData from './data/video-details.json';
+import{ BrowserRouter, Switch, Route } from 'react-router-dom';
+import PageHeader from './components/PageHeader/PageHeader';
+import HomePage from './pages/HomePage/HomePage';
+import UploadPage from './pages/UploadPage/UploadPage';
 
-
-class App extends Component {
-
-  state = {
-    videos: videosData,
-    videoDetails: videoDetailsData[0],
-  }
-
-  
-
-//function to update main video section to display clicked video from videoNav
-handleSelectVideo = (clickedId) => {
-
-  // 1. find the video we want from our json file
-  const foundVideo = videoDetailsData.find((video) =>
-  clickedId === video.id)
-
-  // 2. set state to the clicked plant 
-  this.setState({
-    videoDetails: foundVideo,
-  })
-}
-
-render() {
-
-//  console.log(videosData);
-//  console.log(videoDetailsData);
-
-const filteredVideos = this.state.videos.filter((video) =>
-video.id !== this.state.videoDetails.id)
-
-
-  return (
-    <>
-     <Header />
-     <Video videoDetails={this.state.videoDetails}/>
-     <div className="details-nav-container">
-      <VideoDetails videoDetails={this.state.videoDetails}/>
-      <VideoNav videosData={filteredVideos} selectVideo={this.handleSelectVideo}/>
-     </div>
-    </>
-   );
-  }
+function App() {
+return (
+  <BrowserRouter>
+    <PageHeader />
+    <Switch>
+    <Route path="/upload" component={UploadPage}/>
+    <Route path="/" exact component={HomePage} />
+    <Route path="/:videoId" component={HomePage} />
+    </Switch>
+  </BrowserRouter>
+  );
 }
 
 export default App;

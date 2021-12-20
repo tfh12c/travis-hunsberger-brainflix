@@ -4,60 +4,54 @@ import likes from '../../assets/images/Icons/likes.svg';
 import avatar from '../../assets/images/Mohan-muruge.jpg';
 import comment from '../../assets/images/Icons/add_comment.svg';
 
-function VideoDetails({ videoDetails }) {
+function VideoDetails({ selectedVideo }) {
 
-    //console.log(videoDetails);
-    //console.log(videoDetails.timestamp);
-
-    //reformatting video timestamp to date
-        //grab video details timestamp
-        const videoTimestamp = videoDetails.timestamp
-            //console.log(videoTimestamp);
+     //reformatting video timestamp in selectedVideo to date
+        //get video details timestamp
+        const videoTimestamp = selectedVideo.timestamp
 
         //reformat to date
         const videoDate = new Date(videoTimestamp);
-            //console.log(videoDate);
 
-        //reformat to mm/dd//yyyy format
+        //reformat date to mm/dd/yy
         const videoPostedDate = new Intl.DateTimeFormat('en-US').format(videoDate)
-            //console.log(postedDate);
 
-        //omg omg i cant believe i got this to work @ 11:24pm sunday yall IM LEARNING!
-        //will notate what's happening here later
-            const commentArray = videoDetails.comments.map(comment => {
-                const container = {};
+        
+    //takes comments array from selectedVideo and adds mm/dd/yy format 
+        const commentArray = selectedVideo.comments.map(comment => {
+            const container = {};
 
-                container.name = comment.name;
-                container.date = new Date(comment.timestamp)
-                container.datePosted = new Intl.DateTimeFormat('en-US').format(container.date)
-                container.comment = comment.comment
+            container.name = comment.name;
+            container.date = new Date(comment.timestamp)
+            container.datePosted = new Intl.DateTimeFormat('en-US').format(container.date)
+            container.comment = comment.comment
+            container.id = comment.id
 
-                return container
+            return container
 
-            });
-                //console.log(commentArray)
+        });
         
     return (
         <section className="video-details">
-            <h1 className="video-details__title">{videoDetails.title}</h1>
+            <h1 className="video-details__title">{selectedVideo.title}</h1>
             <div className="video-details__metrics">
                 <div className="video-details__channel-info">
-                    <h3 className="video-details__channel">By {videoDetails.channel}</h3>
+                    <h3 className="video-details__channel">By {selectedVideo.channel}</h3>
                     <span className="video-details__date">{videoPostedDate}</span>
                 </div>
                 <div className="video-details__views-likes">
                     <span className="video-details__views">
-                        <img className="video-details__views-icon" src={views} alt="views icon"/>{videoDetails.views}
+                        <img className="video-details__views-icon" src={views} alt="views icon"/>{selectedVideo.views}
                     </span>
                     <span className="video-details__likes">
-                        <img className="video-details__likes-icon" src={likes} alt="views icon"/>{videoDetails.likes}
+                        <img className="video-details__likes-icon" src={likes} alt="views icon"/>{selectedVideo.likes}
                     </span>
                 </div>
             </div>
-            <p className="video-details__description">{videoDetails.description}</p>
+            <p className="video-details__description">{selectedVideo.description}</p>
 
-            {/* start of comments form, make into child */}
-            <h3 className="video-details__comments-length">{videoDetails.comments.length} Comments</h3>
+            {/* start of comments form */}
+            <h3 className="video-details__comments-length">{selectedVideo.comments.length} Comments</h3>
             <div className="video-details__comments-form"> 
 
                 {/* <!-- Avatar Image --> */}
@@ -76,8 +70,7 @@ function VideoDetails({ videoDetails }) {
 
             {/* start of comments */}
             {commentArray.map((comment) => (
-            <article className="video-details__comment-card">
-                
+            <article key={comment.id} className="video-details__comment-card">
                 <img className="video-details__comment-avatar"></img> 
                 <div className="video-details__comment-text-container">
                     <div className="video-details__comment-name-date-container">

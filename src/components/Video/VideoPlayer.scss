@@ -1,0 +1,30 @@
+@use '../../styles/partials/variables.scss';
+@use '../../styles/partials/mixins';
+
+.video__padding-container {
+    @include mixins.tablet {
+        padding: 0 2rem 0 2rem;
+        background-color: variables.$color-video-player-components;
+    }
+
+    @include mixins.desktop {
+        padding: 0 10rem 0 10rem;
+    }
+}
+
+.video__container {
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0rem;
+    position: relative;
+    background-color: variables.$color-video-player-components;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}

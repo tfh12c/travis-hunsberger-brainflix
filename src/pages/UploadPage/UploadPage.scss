@@ -1,0 +1,189 @@
+@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
+
+.video-upload {
+    padding: 0 1rem 0 1rem;
+    border-top: 1px solid variables.$color-divider-outline;
+
+    @include mixins.tablet {
+        padding: 0 3rem 0 3rem;
+    }
+
+    @include mixins.desktop {
+        padding: 0 8rem 0 8rem;
+    }
+
+    &__title {
+        margin: 0;
+        @include mixins.mobile-headline-padding;
+
+        @include mixins.tablet {
+            @include mixins.headline-padding;
+        }
+    }
+
+    &__video-content-container {
+        @include mixins.tablet {
+            border-top: 1px solid variables.$color-divider-outline;
+            border-bottom: 1px solid variables.$color-divider-outline;
+            margin-bottom: 1rem;
+            
+            @include mixins.desktop {
+                display: flex;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    &__thumbnail-header-image-container {
+        @include mixins.desktop {
+            width: 30%;
+        }
+    }
+
+    &__form-items-container {
+        @include mixins.desktop {
+            width: 70%;
+            margin-left: 2rem;
+        }
+    }
+
+    &__thumbnail-header {
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+        color: variables.$color-secondary-text;
+        margin-top: 0;
+        margin-bottom: .25rem;
+
+        @include mixins.tablet {
+            margin-top: 2rem;
+        }
+    }
+
+    &__thumbnail-container {
+        background-color: variables.$color-divider-outline;
+    }
+
+    &__thumbnail-img {
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: .25rem;
+
+        @include mixins.tablet {
+            width: 50%;
+        }
+
+        @include mixins.desktop {
+            width: 100%;
+        }
+    }
+
+    &__video-title {
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+        color: variables.$color-secondary-text;
+        display: block;
+        margin-top: 1rem;
+
+        @include mixins.desktop {
+            margin-top: 2rem;
+        }
+    }
+
+    &__title-input {
+        margin-top: .25rem;
+        margin-bottom: 1rem;
+        height: 2.25rem;
+        border-radius: .25rem;
+        padding: .75rem;
+        background-color: variables.$color-form-field-background !important;
+        border: 1px solid variables.$color-divider-outline;
+        width: 100%;
+
+        &:focus {
+            outline: none !important;
+            border: 2px solid variables.$color-primary-cta;
+        }
+    }
+
+    &__video-description {
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+        color: variables.$color-secondary-text;
+        display: block;
+    }
+
+    &__description-input {
+        margin-top: .25rem;
+        margin-bottom: 1rem;
+        height: 5.3125rem;
+        border-radius: .25rem;
+        padding: .75rem;
+        background-color: variables.$color-form-field-background !important;
+        border: 1px solid variables.$color-divider-outline;
+        width: 100%;
+
+        &:focus {
+            outline: none !important;
+            border: 2px solid variables.$color-primary-cta;
+        }
+    }
+
+    &__button-container {
+        @include mixins.tablet {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__publish-button {
+        background-color: variables.$color-primary-cta;
+        color: variables.$color-background-cta;
+        height: 2.5rem;
+        width: 100%;
+        border-radius: .25rem;
+        border: none;
+        position: relative;
+        margin-bottom: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: variables.$color-cta-hover;
+        }
+
+        @include mixins.tablet {
+            width: 9.375rem;
+            padding: 0 2rem 0 2rem;
+            margin-left: 2rem;
+        }
+    }
+
+    &__publish-image {
+        position: absolute;
+        top: .5625rem;
+        left: .3125rem;
+    }
+
+    &__cancel-button {
+        background-color: variables.$color-background-cta;
+        color: variables.$color-primary-cta;
+        height: 2.5rem;
+        width: 100%;
+        border-radius: .25rem;
+        border: none;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            background-color: variables.$color-cta-hover;
+        }
+
+        @include mixins.tablet {
+            width: 9.375rem;
+            padding: 0 2rem 0 2rem;
+        }
+    }
+}

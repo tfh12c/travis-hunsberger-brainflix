@@ -1,0 +1,7 @@
+@use '../../styles/partials/mixins';
+
+.home-page__desktop-view {
+    @include mixins.desktop {
+        display: flex;
+    }
+}

@@ -23,8 +23,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-top: 1px solid variables.$color-mercury;
-        border-bottom: 1px solid variables.$color-mercury;
+        border-top: 1px solid variables.$color-divider-outline;
+        border-bottom: 1px solid variables.$color-divider-outline;
         padding: 1rem 0 1rem 0;
 
         @include mixins.tablet {
@@ -54,14 +54,14 @@
     }
 
     &__date {
-        color: variables.$color-silver;
+        color: variables.$color-secondary-text;
     }
 
     //div holding views and likes
     &__views-likes {
         display: flex;
         flex-direction: column;
-        color: variables.$color-silver;
+        color: variables.$color-secondary-text;
 
         @include mixins.tablet {
             flex-direction: row;
@@ -115,7 +115,7 @@
     //div holding comments form
     &__comments-form {
         display: flex;
-        border-bottom: 1px solid variables.$color-mercury;
+        border-bottom: 1px solid variables.$color-divider-outline;
 
         @include mixins.desktop {
             border-bottom: none;
@@ -128,7 +128,8 @@
         width: 2.25rem;
         height: 2.25rem;
         border-radius: 50%;
-        background-color: variables.$color-mercury;
+        background-color: variables.$color-divider-outline;
+        object-fit: cover;
 
         @include mixins.tablet {
             margin-top: 1rem;
@@ -152,7 +153,7 @@
         font-size: .8125rem;
         line-height: 1.125rem;
         font-weight: 700;
-        color: variables.$color-silver;
+        color: variables.$color-secondary-text;
 
         @include mixins.tablet {
             display: block;
@@ -165,8 +166,8 @@
         height: 6rem;
         border-radius: .25rem;
         padding: .75rem;
-        background-color: variables.$color-alabaster !important;
-        border: 1px solid variables.$color-mercury;
+        background-color: variables.$color-form-field-background !important;
+        border: 1px solid variables.$color-divider-outline;
         width: 100%;
 
         // &::placeholder {
@@ -175,7 +176,7 @@
 
         &:focus {
             outline: none !important;
-            border: 2px solid variables.$color-brainflix-blue;
+            border: 2px solid variables.$color-primary-cta;
         }
 
         @include mixins.tablet {
@@ -187,17 +188,18 @@
 
     &__form-button {
         margin-bottom: 1rem;
-        background-color: variables.$color-brainflix-blue;
-        color: variables.$color-white;
+        background-color: variables.$color-primary-cta;
+        color: variables.$color-background-cta;
         height: 2.5rem;
         width: 15rem;
         border-radius: .25rem;
         border: none;
         width: 100%;
         position: relative;
+        cursor: pointer;
 
         &:hover {
-            background-color: variables.$color-brainflix-darkblue;
+            background-color: variables.$color-cta-hover;
         }
 
         @include mixins.tablet {
@@ -218,7 +220,7 @@
     //comment card
     &__comment-card {
         display: flex;
-        border-bottom: 1px solid variables.$color-mercury;
+        border-bottom: 1px solid variables.$color-divider-outline;
 
         @include mixins.tablet {
             padding: 1rem 0 1rem 0;
@@ -226,7 +228,7 @@
 
         @include mixins.desktop {
             border-bottom: none;
-            border-top: 1px solid variables.$color-mercury;
+            border-top: 1px solid variables.$color-divider-outline;
         }
     }
 
@@ -235,7 +237,7 @@
         width: 2.25rem;
         height: 2.25rem;
         border-radius: 50%;
-        background-color: variables.$color-mercury;
+        background-color: variables.$color-divider-outline;
         flex-shrink: 0;
         margin-top: 1rem;
     }
@@ -243,6 +245,7 @@
     //div holding all comment card text name/date/comment
     &__comment-text-container {
         margin-left: 1rem;
+        width: 100%;
     }
 
     //div holding comment card name and date
@@ -253,7 +256,7 @@
     }
 
     &__comment-date {
-        color: variables.$color-silver;
+        color: variables.$color-secondary-text;
 
         @include mixins.desktop {
             margin-right: 1rem;
@@ -262,5 +265,9 @@
 
     &__comment-text {
         margin-top: 0;
+
+        @include mixins.tablet {
+            margin-right: 1rem;
+        }
     }
 }

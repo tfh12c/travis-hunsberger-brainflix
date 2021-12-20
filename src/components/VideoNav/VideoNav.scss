@@ -1,17 +1,17 @@
 @use '../../styles/partials/variables.scss';
 @use '../../styles/partials/mixins';
 
-.nav {
+.video-nav {
     padding: 0 1rem 1rem 1rem;
 
     @include mixins.desktop {
-        border-left: 1px solid variables.$color-mercury;
+        border-left: 1px solid variables.$color-divider-outline;
     }
 
     //anchor tag surrounding video article card
     &__link {
         text-decoration: none;
-        color: variables.$color-brainflix-black;
+        color: variables.$color-primary-text;
     }
 
     &__article {
@@ -25,7 +25,7 @@
     }
 
     &__header {
-        color: variables.$color-silver;
+        color: variables.$color-secondary-text;
         margin: 0;
         @include mixins.mobile-headline-padding;
 

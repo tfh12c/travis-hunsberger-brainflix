@@ -2,19 +2,11 @@
 @use '../../styles/partials/mixins';
 
 
-//MOBILE DIV AND TABLET/DESKTOP DIV WILL NEED TO BE CHANGED TO CHILDS
-//USING DISPLAY NONE TO HIDE ON PAGE
-
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 1rem 1rem 0 1rem;
     margin-bottom: 1rem;
 
     @include mixins.tablet {
-        flex-direction: row;
-        justify-content: space-between;
         padding: 1rem 2rem 0 2rem;
     }
 
@@ -29,16 +21,15 @@
     }
 
     //STYLING FOR MOBILE VIEW
-    //div holding all mobile elements under brainflix logo
     &__mobile-view {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
         @include mixins.tablet {
             display: none;
         }
+    }
+
+    &__mobile-logo-container {
+        display: flex;
+        justify-content: center;
     }
 
     &__mobile-search-avatar-container {
@@ -47,13 +38,19 @@
         margin-bottom: 1rem;
     }
 
+    &__mobile-form {
+        width: 100%;
+        min-width: 15rem;
+    }
+
     &__mobile-form-input {
         height: 2.25rem;
-        width: 15rem;
+        width: 100%;
+        min-width: 15rem;
         border-radius: .25rem;
         padding: .75rem;
-        background-color: variables.$color-alabaster !important;
-        border: 1px solid variables.$color-mercury;
+        background-color: variables.$color-form-field-background !important;
+        border: 1px solid variables.$color-divider-outline;
         background: url(../../assets/images/Icons/search.svg); //why is this negating the background color of the form 
         background-repeat: no-repeat;
         background-position: .5rem;
@@ -61,7 +58,7 @@
 
         &:focus {
             outline: none !important;
-            border: 2px solid variables.$color-brainflix-blue;
+            border: 2px solid variables.$color-primary-cta;
         }
     }
 
@@ -70,19 +67,26 @@
         height: 2.25rem;
         border-radius: 50%;
         margin-left: 1rem;
+        object-fit: cover;
+    }
+
+    &__mobile-link {
+        text-decoration: none;
+        width: 100%;
     }
 
     &__mobile-button {
-        background-color: variables.$color-brainflix-blue;
-        color: variables.$color-white;
+        background-color: variables.$color-primary-cta;
+        color: variables.$color-background-cta;
         height: 2.5rem;
         width: 100%;
         border-radius: .25rem;
         border: none;
         position: relative;
+        cursor: pointer;
 
         &:hover {
-            background-color: variables.$color-brainflix-darkblue;
+            background-color: variables.$color-cta-hover;
         }
     }
 
@@ -99,7 +103,14 @@
 
         @include mixins.tablet {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+    }
+
+    &__tablet-desktop-item-container {
+        display: flex;
+        flex-direction: row;
     }
 
     &__tablet-desktop-form-input {
@@ -107,8 +118,8 @@
         width: 15rem;
         border-radius: .25rem;
         padding: 1rem;
-        background-color: variables.$color-alabaster !important;
-        border: 1px solid variables.$color-mercury;
+        background-color: variables.$color-form-field-background !important;
+        border: 1px solid variables.$color-divider-outline;
         background: url(../../assets/images/Icons/search.svg); //why is this negating the background color of the form 
         background-repeat: no-repeat;
         background-position: .5rem;
@@ -116,13 +127,13 @@
 
         &:focus {
             outline: none !important;
-            border: 2px solid variables.$color-brainflix-blue;
+            border: 2px solid variables.$color-primary-cta;
         }
     }
 
     &__tablet-desktop-button {
-        background-color: variables.$color-brainflix-blue;
-        color: variables.$color-white;
+        background-color: variables.$color-primary-cta;
+        color: variables.$color-background-cta;
         height: 2.5rem;
         width: 9.375rem;
         border-radius: .25rem;
@@ -130,6 +141,12 @@
         padding: 0 2rem 0 2rem;
         margin-left: 1rem;
         position: relative;
+        cursor: pointer;
+
+        &:hover {
+            background-color: variables.$color-cta-hover;
+        }
+
     }
 
     &__tablet-desktop-button-image {
@@ -143,6 +160,7 @@
         height: 2.5rem;
         border-radius: 50%;
         margin-left: 1rem;
+        object-fit: cover;
     }
 
 }
