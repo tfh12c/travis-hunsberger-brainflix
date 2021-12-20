@@ -3,15 +3,10 @@
 
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 1rem 1rem 0 1rem;
     margin-bottom: 1rem;
 
     @include mixins.tablet {
-        flex-direction: row;
-        justify-content: space-between;
         padding: 1rem 2rem 0 2rem;
     }
 
@@ -26,16 +21,15 @@
     }
 
     //STYLING FOR MOBILE VIEW
-    //div holding all mobile elements under brainflix logo
     &__mobile-view {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
         @include mixins.tablet {
             display: none;
         }
+    }
+
+    &__mobile-logo-container {
+        display: flex;
+        justify-content: center;
     }
 
     &__mobile-search-avatar-container {
@@ -44,9 +38,15 @@
         margin-bottom: 1rem;
     }
 
+    &__mobile-form {
+        width: 100%;
+        min-width: 15rem;
+    }
+
     &__mobile-form-input {
         height: 2.25rem;
-        width: 15rem;
+        width: 100%;
+        min-width: 15rem;
         border-radius: .25rem;
         padding: .75rem;
         background-color: variables.$color-form-field-background !important;
@@ -103,7 +103,13 @@
 
         @include mixins.tablet {
             display: flex;
+            justify-content: space-between;
         }
+    }
+
+    &__tablet-desktop-item-container {
+        display: flex;
+        flex-direction: row;
     }
 
     &__tablet-desktop-form-input {
