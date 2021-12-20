@@ -1,7 +1,7 @@
 import './HomePage.scss';
 import { Component } from 'react';
 import axios from 'axios';
-import Video from '../../components/Video/Video';
+import VideoPlayer from '../../components/Video/VideoPlayer';
 import VideoDetails from '../../components//VideoDetails/VideoDetails';
 import VideoNav from '../../components/VideoNav/VideoNav';
 
@@ -71,7 +71,7 @@ class HomePage extends Component {
 
         return (
             <div className="home-page">
-                <Video selectedVideo={this.state.selectedVideo} />
+                <VideoPlayer selectedVideo={this.state.selectedVideo} />
                 <div className="home-page__desktop-view">   
                     <VideoDetails selectedVideo={this.state.selectedVideo} />
                     <VideoNav videos={filteredVideos} />

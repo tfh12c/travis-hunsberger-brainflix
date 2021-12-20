@@ -1,4 +1,4 @@
-import './Video.scss';
+import './VideoPlayer.scss';
 
 function Video({ selectedVideo }) {
 
