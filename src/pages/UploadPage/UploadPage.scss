@@ -5,12 +5,25 @@
     padding: 0 1rem 0 1rem;
     border-top: 1px solid variables.$color-mercury;
 
+    @include mixins.tablet {
+        padding: 0 3rem 0 3rem;
+    }
+
     &__title {
         margin: 0;
         @include mixins.mobile-headline-padding;
 
         @include mixins.tablet {
             @include mixins.headline-padding;
+        }
+    }
+
+    &__video-content-container {
+        @include mixins.tablet {
+            border-top: 1px solid variables.$color-mercury;
+            border-bottom: 1px solid variables.$color-mercury;
+            margin-bottom: 1rem;
+            
         }
     }
 
@@ -21,6 +34,10 @@
         color: variables.$color-silver;
         margin-top: 0;
         margin-bottom: .25rem;
+
+        @include mixins.tablet {
+            margin-top: 2rem;
+        }
     }
 
     &__thumbnail-container {
@@ -31,6 +48,10 @@
         max-height: 100%;
         max-width: 100%;
         border-radius: .25rem;
+
+        @include mixins.tablet {
+            width: 50%;
+        }
     }
 
     &__video-title {
@@ -82,6 +103,13 @@
         }
     }
 
+    &__button-container {
+        @include mixins.tablet {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
     &__publish-button {
         background-color: variables.$color-brainflix-blue;
         color: variables.$color-white;
@@ -94,6 +122,12 @@
 
         &:hover {
             background-color: variables.$color-brainflix-darkblue;
+        }
+
+        @include mixins.tablet {
+            width: 9.375rem;
+            padding: 0 2rem 0 2rem;
+            margin-left: 2rem;
         }
     }
 
@@ -114,6 +148,11 @@
 
         &:hover {
             background-color: variables.$color-brainflix-darkblue;
+        }
+
+        @include mixins.tablet {
+            width: 9.375rem;
+            padding: 0 2rem 0 2rem;
         }
     }
 }
