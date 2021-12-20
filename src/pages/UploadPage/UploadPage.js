@@ -4,7 +4,7 @@ import publish from '../../assets/images/Icons/publish.svg';
 
 function UploadPage() {
 
-    //console.log(videos);
+    
 
     return(
        <section className="video-upload">
@@ -26,10 +26,9 @@ function UploadPage() {
                 </div>
             </div>
             <div className="video-upload__button-container">
-                <button className="video-upload__publish-button">
+                <button className="video-upload__publish-button" type="submit">
                     <img className="video-upload__publish-image" src={publish} alt="upload icon"/>PUBLISH
                 </button>
-
                 <button className="video-upload__cancel-button">CANCEL</button>
             </div>
        </section>

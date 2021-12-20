@@ -148,6 +148,7 @@
         border: none;
         position: relative;
         margin-bottom: 1rem;
+        cursor: pointer;
 
         &:hover {
             background-color: variables.$color-cta-hover;
@@ -174,6 +175,7 @@
         border-radius: .25rem;
         border: none;
         position: relative;
+        cursor: pointer;
 
         &:hover {
             background-color: variables.$color-cta-hover;
