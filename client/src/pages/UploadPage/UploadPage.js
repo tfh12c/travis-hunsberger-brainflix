@@ -9,9 +9,7 @@ function UploadPage() {
     const onPublish = (event) => {
         event.preventDefault()
         alert("Thanks for uploading!")
-        return (
-            <Redirect to="/" />
-        );
+        window.location.href = "/"
     }
 
     return(
@@ -30,6 +28,7 @@ function UploadPage() {
                     <input type="text" className="video-upload__title-input" name="comment" id="comment" placeholder="Add a title to your video"></input>
                     {/* video description form */}
                     <label className="video-upload__video-description" htmlFor="comment">ADD A VIDEO DESCRIPTION</label>
+                    {/* CHANGE INPUT TYPE TO AREA FOR LARGER INPUT AREAS, look into resize none */}
                     <input type="text" className="video-upload__description-input" name="comment" id="comment" placeholder="Add a description to your video"></input>
                 </div>
             </div>
