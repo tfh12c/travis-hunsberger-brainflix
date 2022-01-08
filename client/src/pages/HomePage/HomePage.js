@@ -19,7 +19,7 @@ class HomePage extends Component {
         if (this.props.match.params.videoId) {
             this.getSpecificVideoId(this.props.match.params.videoId);
         } else {
-            axios.get("https://project-2-api.herokuapp.com/videos?api_key=cb5ad499-beee-4800-b523-87c70327d42a")
+            axios.get("http://localhost:9000/videos")
                 .then((response) => {
                     this.getSpecificVideoId(response.data[0].id);
                 });
@@ -27,7 +27,7 @@ class HomePage extends Component {
     };
 
     getSpecificVideoId(id) {
-        axios.get(`https://project-2-api.herokuapp.com/videos/${id}/?api_key=cb5ad499-beee-4800-b523-87c70327d42a`)
+        axios.get(`http://localhost:9000/videos/${id}`)
             .then((response) => {
                 this.setState({
                     selectedVideo: response.data
@@ -37,7 +37,7 @@ class HomePage extends Component {
 
 
     componentDidMount() {
-        axios.get("https://project-2-api.herokuapp.com/videos?api_key=cb5ad499-beee-4800-b523-87c70327d42a")
+        axios.get("http://localhost:9000/videos")
             .then((response) => {
                 this.setState({
                     videos: response.data,

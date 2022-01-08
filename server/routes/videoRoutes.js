@@ -4,12 +4,19 @@ const fs = require('fs');
 const uniqid = require('uniqid');
 
 
-// Function to read videos 
+// Function to read videos data
 function readVideos() {
     const videosFile = fs.readFileSync('./data/videos.json');
     const videosData = JSON.parse(videosFile);
     return videosData;
 }
+
+// Function to write videos data
+function writeVideos(data) {
+    fs.writeFileSync('./data/videos.json', JSON.stringify(data));
+}
+
+// Routes 
 
 // GET endpoint for all videos
 router.get('/', (req, res) => {
@@ -34,20 +41,44 @@ router.get('/:videoId', (req, res) => {
 
 // POST endpoint to add a video
 router.post('/', (req, res) => {
+    const videos = readVideos();
+
     // Make new video with unique ID
     const newVideo = {
-        id: uniqid(),
         title: req.body.title,
-        description: req.body.description
+        channel: "Travy Is Maybe A WebDev",
+        image: "../public/images/Upload-video-preview.jpg",
+        description: req.body.description,
+        views: "7,777,777",
+        likes: "999,999",
+        duration: "4:20",
+        video: "https://project-2-api.herokuapp.com/stream",
+        timestamp: 1626032763000,
+        comments: [
+            {
+                name: "NotTravy Hunsberger",
+                comment: "I'm baby seitan austin retro man bun, lyft cronut activated charcoal pok pok artisan photo booth tumblr small batch tousled biodiesel.",
+                likes: 0,
+                timestamp: 1628522461000
+            },
+            {
+                name: "DefNot TravyH",
+                comment: "Copper mug bespoke wolf lumbersexual, activated charcoal pok pok stumptown cliche portland. Art party man bun la croix put a bird on it ramps, migas locavore.",
+                likes: 0,
+                timestamp: 1628522461000 
+            }
+        ],
+        id: uniqid()
     };
 
-    // Add new video to videos json data
-    const videos = readVideos();
+    // Push new video into videos data
     videos.push(newVideo);
-    fs.writeFileSync('./data/videos.json', JSON.stringify(videos));
 
-    // Respond with the video that was created
+    // Write the new video data to file
+    writeVideos(videos);
+
+    // Send response
     res.status(201).json(newVideo);
-})
+});
 
 module.exports = router;
