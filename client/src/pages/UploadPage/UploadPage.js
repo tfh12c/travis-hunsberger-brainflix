@@ -3,6 +3,7 @@ import './UploadPage.scss';
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import publish from '../../assets/images/Icons/publish.svg';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class UploadPage extends Component {
 
@@ -52,7 +53,9 @@ class UploadPage extends Component {
                                 <button className="video-upload__publish-button" type="submit">
                                     <img className="video-upload__publish-image" src={publish} alt="upload icon"/>PUBLISH
                                 </button>
-                                <button className="video-upload__cancel-button">CANCEL</button>
+                                <Link to={"/"}>
+                                    <button className="video-upload__cancel-button">CANCEL</button>
+                                </Link>
                             </div>
                         </form>
                     </div>
