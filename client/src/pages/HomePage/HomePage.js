@@ -5,9 +5,6 @@ import VideoPlayer from '../../components/Video/VideoPlayer';
 import VideoDetails from '../../components//VideoDetails/VideoDetails';
 import VideoNav from '../../components/VideoNav/VideoNav';
 
-// API KEY    "cb5ad499-beee-4800-b523-87c70327d42a"
-// API URL    "https://project-2-api.herokuapp.com"
-
 class HomePage extends Component {
 
     state = {
