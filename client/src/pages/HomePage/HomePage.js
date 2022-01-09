@@ -16,6 +16,7 @@ class HomePage extends Component {
     };
 
     getVideo = () => {
+        // checks URL from props in Router
         if (this.props.match.params.videoId) {
             this.getSpecificVideoId(this.props.match.params.videoId);
         } else {
@@ -26,7 +27,7 @@ class HomePage extends Component {
         }
     };
 
-    getSpecificVideoId(id) {
+    getSpecificVideoId(id) { // ID param is coming from getVideo
         axios.get(`http://localhost:9000/videos/${id}`)
             .then((response) => {
                 this.setState({
@@ -37,6 +38,7 @@ class HomePage extends Component {
 
 
     componentDidMount() {
+        // GET list of videos and set state
         axios.get("http://localhost:9000/videos")
             .then((response) => {
                 this.setState({
@@ -50,6 +52,7 @@ class HomePage extends Component {
         const newVideoId = this.props.match.params.videoId 
         const oldVideoId = prevProps.match.params.videoId 
 
+        // If new video ID in URL does not match old video ID in URL, run getVideo to get the correct video
         if(newVideoId !== oldVideoId) {
             this.getVideo();
         }
