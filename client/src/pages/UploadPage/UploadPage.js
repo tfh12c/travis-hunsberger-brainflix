@@ -24,15 +24,6 @@ class UploadPage extends Component {
                 
             });
         });
-        // .then((response) => {
-        //     axios.get("http://localhost:9000/videos")
-        //     .then((response) => {
-                
-        //         this.setState({
-        //             videos: response.data
-        //         })
-        //     });
-        // }); 
 
         alert("Thanks for uploading!")
         window.location.href = "/"
@@ -56,12 +47,11 @@ class UploadPage extends Component {
                             <input type="text" className="video-upload__title-input" name="title" id="title" placeholder="Add a title to your video"></input>
                             {/* video description form */}
                             <label className="video-upload__video-description" htmlFor="description">ADD A VIDEO DESCRIPTION</label>
-                            {/* CHANGE INPUT TYPE TO AREA FOR LARGER INPUT AREAS, look into resize none */}
-                            <input type="text" className="video-upload__description-input" name="description" id="description" placeholder="Add a description to your video"></input>
+                            <textarea className="video-upload__description-input" name="description" id="description" placeholder="Add a description to your video"></textarea>
                             <div className="video-upload__button-container">
-                                    <button className="video-upload__publish-button" type="submit">
-                                        <img className="video-upload__publish-image" src={publish} alt="upload icon"/>PUBLISH
-                                    </button>
+                                <button className="video-upload__publish-button" type="submit">
+                                    <img className="video-upload__publish-image" src={publish} alt="upload icon"/>PUBLISH
+                                </button>
                                 <button className="video-upload__cancel-button">CANCEL</button>
                             </div>
                         </form>
