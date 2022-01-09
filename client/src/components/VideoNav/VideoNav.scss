@@ -6,6 +6,7 @@
 
     @include mixins.desktop {
         border-left: 1px solid variables.$color-divider-outline;
+        margin-right: 8rem;
     }
 
     //anchor tag surrounding video article card
