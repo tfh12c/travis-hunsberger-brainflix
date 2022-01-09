@@ -11,23 +11,31 @@ class UploadPage extends Component {
     };
 
     onPublish = (event) => {
-        event.preventDefault()
+        event.preventDefault();
 
-        alert("Thanks for uploading!")
-        window.location.href = "/"
 
         axios.post("http://localhost:9000/videos", {
             title: event.target.title.value,
             description: event.target.description.value,
         })
         .then((response) => {
-            axios.get("http://localhost:9000/videos")
-            .then((response) => {
-                this.setState({
-                    videos: response.data
-                })
+            this.setState({
+                videos: response.data
+                
             });
-        }); 
+        });
+        // .then((response) => {
+        //     axios.get("http://localhost:9000/videos")
+        //     .then((response) => {
+                
+        //         this.setState({
+        //             videos: response.data
+        //         })
+        //     });
+        // }); 
+
+        alert("Thanks for uploading!")
+        window.location.href = "/"
     };
 
     render() {
@@ -42,23 +50,31 @@ class UploadPage extends Component {
                         </div>
                     </div>
                     <div className="video-upload__form-items-container">
-                        {/* title of video form */}
-                        <label className="video-upload__video-title" htmlFor="comment">TITLE YOUR VIDEO</label>
-                        <input type="text" className="video-upload__title-input" name="comment" id="comment" placeholder="Add a title to your video"></input>
-                        {/* video description form */}
-                        <label className="video-upload__video-description" htmlFor="comment">ADD A VIDEO DESCRIPTION</label>
-                        {/* CHANGE INPUT TYPE TO AREA FOR LARGER INPUT AREAS, look into resize none */}
-                        <input type="text" className="video-upload__description-input" name="comment" id="comment" placeholder="Add a description to your video"></input>
+                        <form onSubmit={this.onPublish}>
+                            {/* title of video form */}
+                            <label className="video-upload__video-title" htmlFor="title">TITLE YOUR VIDEO</label>
+                            <input type="text" className="video-upload__title-input" name="title" id="title" placeholder="Add a title to your video"></input>
+                            {/* video description form */}
+                            <label className="video-upload__video-description" htmlFor="description">ADD A VIDEO DESCRIPTION</label>
+                            {/* CHANGE INPUT TYPE TO AREA FOR LARGER INPUT AREAS, look into resize none */}
+                            <input type="text" className="video-upload__description-input" name="description" id="description" placeholder="Add a description to your video"></input>
+                            <div className="video-upload__button-container">
+                                    <button className="video-upload__publish-button" type="submit">
+                                        <img className="video-upload__publish-image" src={publish} alt="upload icon"/>PUBLISH
+                                    </button>
+                                <button className="video-upload__cancel-button">CANCEL</button>
+                            </div>
+                        </form>
                     </div>
-                </div>
-                <div className="video-upload__button-container">
+            </div>
+                {/* <div className="video-upload__button-container">
                     <form onSubmit={this.onPublish}>
                         <button className="video-upload__publish-button" type="submit">
                             <img className="video-upload__publish-image" src={publish} alt="upload icon"/>PUBLISH
                         </button>
                     </form>
                     <button className="video-upload__cancel-button">CANCEL</button>
-                </div>
+                </div> */}
         </section>
         );
     } 
