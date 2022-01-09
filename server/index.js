@@ -10,6 +10,7 @@ const port = process.env.PORT || 8080;
 // Middleware 
 app.use(express.json());
 app.use(cors());
+app.use('/static-files', express.static('public/images'))
 
 // Include video routes in server
 app.use('/videos', videoRoutes);

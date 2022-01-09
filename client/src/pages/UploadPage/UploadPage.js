@@ -67,14 +67,6 @@ class UploadPage extends Component {
                         </form>
                     </div>
             </div>
-                {/* <div className="video-upload__button-container">
-                    <form onSubmit={this.onPublish}>
-                        <button className="video-upload__publish-button" type="submit">
-                            <img className="video-upload__publish-image" src={publish} alt="upload icon"/>PUBLISH
-                        </button>
-                    </form>
-                    <button className="video-upload__cancel-button">CANCEL</button>
-                </div> */}
         </section>
         );
     } 

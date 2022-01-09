@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
     const newVideo = {
         title: req.body.title,
         channel: "Travy Is Maybe A WebDev",
-        image: "../public/images/Upload-video-preview.jpg",
+        image: "http://localhost:9000/static-files/Upload-video-preview.jpg",
         description: req.body.description,
         views: "7,777,777",
         likes: "999,999",
