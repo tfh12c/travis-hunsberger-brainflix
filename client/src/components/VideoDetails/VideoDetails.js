@@ -3,6 +3,7 @@ import views from '../../assets/images/Icons/views.svg';
 import likes from '../../assets/images/Icons/likes.svg';
 import avatar from '../../assets/images/Mohan-muruge.jpg';
 import comment from '../../assets/images/Icons/add_comment.svg';
+import uniqid from 'uniqid';
 
 function VideoDetails({ selectedVideo }) {
 
@@ -20,12 +21,13 @@ function VideoDetails({ selectedVideo }) {
     //takes comments array from selectedVideo and adds mm/dd/yy format 
         const commentArray = selectedVideo.comments.map(comment => {
             const container = {};
+            console.log(container);
 
             container.name = comment.name;
             container.date = new Date(comment.timestamp)
             container.datePosted = new Intl.DateTimeFormat('en-US').format(container.date)
             container.comment = comment.comment
-            container.id = comment.id
+            container.id = uniqid()
 
             return container
 
