@@ -17,11 +17,9 @@ function VideoDetails({ selectedVideo }) {
         //reformat date to mm/dd/yy
         const videoPostedDate = new Intl.DateTimeFormat('en-US').format(videoDate)
 
-        
     //takes comments array from selectedVideo and adds mm/dd/yy format 
         const commentArray = selectedVideo.comments.map(comment => {
             const container = {};
-            console.log(container);
 
             container.name = comment.name;
             container.date = new Date(comment.timestamp)
@@ -89,5 +87,3 @@ function VideoDetails({ selectedVideo }) {
 }
 
 export default VideoDetails;
-
- 
